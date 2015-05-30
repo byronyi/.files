@@ -198,6 +198,8 @@ Plugin 'tpope/vim-fugitive'
 " A.vim for C/C++
 Plugin 'a.vim'
 nnoremap <F4> :A<CR>
+autocmd FileType c set foldmethod=syntax
+autocmd FileType cpp set foldmethod=syntax
 
 " Python folding
 Plugin 'tmhedberg/SimpylFold'
