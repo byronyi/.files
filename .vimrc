@@ -125,10 +125,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*~,*.pyc,*.class
 
 " Folding
 set foldenable
-" set foldmethod=syntax
-" set foldmethod=indent
-" set foldlevelstart=1
-" set foldnestmax=3             " Deepest fold is 3 levels
+set foldlevelstart=1
+set foldnestmax=3             " Deepest fold is 3 levels
 nnoremap <space> za
 vnoremap <space> zf
 
