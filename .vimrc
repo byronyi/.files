@@ -125,7 +125,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*~,*.pyc,*.class
 
 " Folding
 set foldenable
-set foldlevelstart=1
+set foldlevelstart=3
 set foldnestmax=3             " Deepest fold is 3 levels
 nnoremap <space> za
 vnoremap <space> zf
@@ -162,21 +162,13 @@ nmap <F3> :TagbarToggle<CR>
 Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-nmap w <Plug>(easymotion-bd-w)
-nmap e <Plug>(easymotion-bd-e)
-map h <Plug>(easymotion-linebackward)
-map j <Plug>(easymotion-j)
-map k <Plug>(easymotion-k)
-map l <Plug>(easymotion-lineforward)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+let g:EasyMotion_skipfoldedline = 0
+nmap <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>e <Plug>(easymotion-bd-e)
 
 " Semantic Completer
 Plugin 'Valloric/YouCompleteMe'
-nnoremap <leader>g :YcmCompleter GoTo<CR>
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+nnoremap <leader>g :YcmCompleter GoToDefinition<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
