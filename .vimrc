@@ -160,11 +160,23 @@ nmap <F3> :TagbarToggle<CR>
 
 " File Navigation
 Plugin 'Lokaltog/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+nmap w <Plug>(easymotion-bd-w)
+nmap e <Plug>(easymotion-bd-e)
+map h <Plug>(easymotion-linebackward)
+map j <Plug>(easymotion-j)
+map k <Plug>(easymotion-k)
+map l <Plug>(easymotion-lineforward)
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 " Semantic Completer
 Plugin 'Valloric/YouCompleteMe'
 nnoremap <leader>g :YcmCompleter GoTo<CR>
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
