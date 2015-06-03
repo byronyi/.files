@@ -50,8 +50,8 @@ set background=dark
 set ruler             			  " Show the line number on the bar
 set number              			" Line numbers
 set cursorline								" Line under cursor
-" set textwidth=80              " We like 80 column
-set scrolloff=10							" Keep at least 10 lines above/below
+set textwidth=80              " We like 80 column
+set scrolloff=5               " Keep at least 10 lines above/below
 set sidescrolloff=10          " Keep at least 10 lines left/right
 set lazyredraw          			" Don't redraw when don't have to
 set noerrorbells              " Don't make noise
@@ -150,18 +150,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
-" Nerd Tree
+" Directory Navigation
 Plugin 'scrooloose/nerdtree'
 noremap <F2> :NERDTreeToggle<CR>
 
-" Tarbar
+" Tagging
 Plugin 'majutsushi/tagbar'
 nmap <F3> :TagbarToggle<CR>
 
-" You Complete Me
+" File Navigation
+Plugin 'Lokaltog/vim-easymotion'
+
+" Semantic Completer
 Plugin 'Valloric/YouCompleteMe'
 nnoremap <leader>g :YcmCompleter GoTo<CR>
-" let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
@@ -171,7 +174,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 
-" Ctrl-p
+" Project Navigation
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_bottom = 0
@@ -183,24 +186,26 @@ let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
+" Searching
+Plugin 'rking/ag.vim'
+Plugin 'dyng/ctrlsf.vim'
+
 " Syntax Checking
 Plugin 'scrooloose/syntastic'
 
 " Git inside Vim
 Plugin 'tpope/vim-fugitive'
 
-" A.vim for C/C++
+" C/C++
 Plugin 'a.vim'
 nnoremap <F4> :A<CR>
 autocmd FileType c set foldmethod=syntax
 autocmd FileType cpp set foldmethod=syntax
 
-" Python folding
+" Python
 Plugin 'tmhedberg/SimpylFold'
-let g:SimpylFold_docstring_preview = 1
-
-" Cython
 Plugin 'tshirtman/vim-cython'
+let g:SimpylFold_docstring_preview = 1
 
 " Go
 Plugin 'fatih/vim-go'
