@@ -168,7 +168,7 @@ nmap <Leader>e <Plug>(easymotion-bd-e)
 
 " Semantic Completer
 Plugin 'Valloric/YouCompleteMe'
-nnoremap <leader>g :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
