@@ -218,7 +218,6 @@ Plugin 'fatih/vim-go'
 Plugin 'artur-shaik/vim-javacomplete2'
 autocmd FileType java set foldmethod=syntax
 autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType java nnoremap <F4> call javacomplete#AddImport()<cr>
 
 " JavaScript
 Plugin 'moll/vim-node'
