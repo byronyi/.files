@@ -249,5 +249,3 @@ filetype plugin indent on    " required
 set rtp+=~/.vim/bundle/vim-colors-solarized
 colorscheme solarized
 let g:solarized_termtrans = 1
-
-highlight Cursorline term=bold cterm=bold
