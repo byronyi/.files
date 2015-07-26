@@ -246,6 +246,8 @@ Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on    " required
 
-let g:solarized_termtrans = 1
+set rtp+=~/.vim/bundle/vim-colors-solarized
 colorscheme solarized
+let g:solarized_termtrans = 1
+
 highlight Cursorline term=bold cterm=bold
