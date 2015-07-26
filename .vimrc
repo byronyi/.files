@@ -215,9 +215,7 @@ let g:SimpylFold_docstring_preview = 1
 Plugin 'fatih/vim-go'
 
 " Java
-Plugin 'artur-shaik/vim-javacomplete2'
 autocmd FileType java set foldmethod=syntax
-autocmd FileType java set omnifunc=javacomplete#Complete
 
 " JavaScript
 Plugin 'moll/vim-node'
