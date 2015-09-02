@@ -239,6 +239,9 @@ autocmd FileType rust set foldmethod=syntax
 " Markdown
 Plugin 'coryfklein/vim-markdown'
 
+" Dockerfile
+Plugin 'ekalinin/Dockerfile.vim'
+
 " Dash for Documentation on Mac OS X
 Plugin 'rizzatti/dash.vim'
 nmap <silent> <leader>h <Plug>DashSearch
