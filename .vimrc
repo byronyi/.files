@@ -50,7 +50,6 @@ set background=dark
 set ruler             			  " Show the line number on the bar
 set number              			" Line numbers
 set cursorline								" Line under cursor
-set textwidth=80              " We like 80 column
 set scrolloff=5               " Keep at least 10 lines above/below
 set sidescrolloff=10          " Keep at least 10 lines left/right
 set lazyredraw          			" Don't redraw when don't have to
@@ -152,6 +151,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Directory Navigation
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 noremap <F2> :NERDTreeToggle<CR>
 
 " Tagging
@@ -179,7 +179,7 @@ let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 
 " Project Navigation
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
@@ -216,6 +216,7 @@ Plugin 'fatih/vim-go'
 
 " Java
 autocmd FileType java set foldmethod=syntax
+autocmd FileType java let g:EclimCompletionMethod = 'omnifunc'
 
 " JavaScript
 Plugin 'moll/vim-node'
@@ -224,6 +225,8 @@ Plugin 'heavenshell/vim-jsdoc'
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
+autocmd FileType scala let g:EclimCompletionMethod = 'omnifunc'
+autocmd FileType scala set foldmethod=syntax
 
 " Rust
 Plugin 'rust-lang/rust.vim'
