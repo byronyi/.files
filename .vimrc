@@ -213,6 +213,7 @@ let g:SimpylFold_docstring_preview = 1
 
 " Go
 Plugin 'fatih/vim-go'
+autocmd FileType go nnoremap <leader>g :GoDef<CR>
 
 " Java
 autocmd FileType java set foldmethod=syntax
