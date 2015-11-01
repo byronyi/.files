@@ -214,6 +214,9 @@ autocmd FileType rust set foldmethod=syntax
 autocmd FileType rust let g:ycm_semantic_triggers = { 'rust' : ['::', '.'] }
 autocmd FileType rust nnoremap <leader>g :call RacerGoToDefinition()<cr>
 
+" CMake
+Plugin 'jalcine/cmake.vim'
+
 " Tex
 Plugin 'lervag/vimtex'
 
