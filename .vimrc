@@ -124,8 +124,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*~,*.pyc,*.class
 
 " Folding
 set foldenable
-set foldlevelstart=3
-set foldnestmax=3             " Deepest fold is 3 levels
+set foldlevelstart=0
 nnoremap <space> za
 vnoremap <space> zf
 
@@ -157,14 +156,6 @@ noremap <F2> :NERDTreeToggle<CR>
 " Tagging
 Plugin 'majutsushi/tagbar'
 nmap <F3> :TagbarToggle<CR>
-
-" File Navigation
-Plugin 'Lokaltog/vim-easymotion'
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_skipfoldedline = 0
-nmap <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>e <Plug>(easymotion-bd-e)
 
 " Semantic Completer
 Plugin 'Valloric/YouCompleteMe'
@@ -203,8 +194,6 @@ Plugin 'tpope/vim-fugitive'
 " C/C++
 Plugin 'a.vim'
 nnoremap <F4> :A<CR>
-autocmd FileType c set foldmethod=syntax
-autocmd FileType cpp set foldmethod=syntax
 
 " Python
 Plugin 'tmhedberg/SimpylFold'
@@ -215,37 +204,22 @@ let g:SimpylFold_docstring_preview = 1
 Plugin 'fatih/vim-go'
 autocmd FileType go nnoremap <leader>g :GoDef<CR>
 
-" Java
-autocmd FileType java set foldmethod=syntax
-autocmd FileType java let g:EclimCompletionMethod = 'omnifunc'
-
-" JavaScript
-Plugin 'moll/vim-node'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'heavenshell/vim-jsdoc'
-
-" Scala
-Plugin 'derekwyatt/vim-scala'
-autocmd FileType scala let g:EclimCompletionMethod = 'omnifunc'
-autocmd FileType scala set foldmethod=syntax
-
 " Rust
 Plugin 'rust-lang/rust.vim'
 Plugin 'phildawes/racer'
-autocmd FileType rust nnoremap <leader>g :call RacerGoToDefinition()<cr>
-autocmd FileType rust set makeprg=cargo\ test\ --\ --nocapture
-autocmd FileType rust let g:ycm_semantic_triggers = { 'rust' : ['::', '.'] }
+Plugin 'racer-rust/vim-racer'
+let $RUST_SRC_PATH="/usr/local/src/rust/src"
+let g:racer_cmd = "~/.vim/bundle/racer/target/release/racer"
 autocmd FileType rust set foldmethod=syntax
+autocmd FileType rust let g:ycm_semantic_triggers = { 'rust' : ['::', '.'] }
+autocmd FileType rust nnoremap <leader>g :call RacerGoToDefinition()<cr>
 
-" Markdown
-Plugin 'coryfklein/vim-markdown'
+" Tex
+Plugin 'lervag/vimtex'
 
-" Dockerfile
-Plugin 'ekalinin/Dockerfile.vim'
-
-" Dash for Documentation on Mac OS X
-Plugin 'rizzatti/dash.vim'
-nmap <silent> <leader>h <Plug>DashSearch
+" Pandoc
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vim-pandoc/vim-pandoc'
 
 call vundle#end()
 filetype plugin indent on    " required
