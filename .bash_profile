@@ -28,7 +28,6 @@ alias f='open -a Finder ./'                 # f:            Opens current direct
 alias ~="cd ~"                              # ~:            Go Home
 alias vimrc="vim ~/.vimrc"
 alias c='clear'                             # c:            Clear terminal display
-alias which='type -all'                     # which:        Find executables
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
 alias show_options='shopt'                  # Show_options: display bash options settings
 alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
