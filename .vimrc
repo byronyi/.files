@@ -224,5 +224,19 @@ Plugin 'lervag/vimtex'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
 
+" Org Mode
+Plugin 'jceb/vim-orgmode'
+
+" Color Schemes
+Plugin 'jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()
-filetype plugin indent on    " required
+filetype plugin indent on
+
+colorscheme solarized
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
