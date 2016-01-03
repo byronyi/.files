@@ -8,13 +8,14 @@ export EDITOR=vim
 export BLOCKSIZE=1k
 
 export CLICOLOR=1
+export TERM=xterm-256color
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
-alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
-alias ls='ls -C'                       # Preferred 'ls' implementation
+alias ll='ls -FGlAhp'                       # Preferred 'll' implementation
+alias ls='ls -C'                            # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
 cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
