@@ -2,7 +2,7 @@
 autocmd! bufwritepost .vimrc source %
 
 " System Environment
-set nocompatible        			" Vim, not vi
+set nocompatible              " Vim, not vi
 set shell=bash
 set ttyfast                   " We have a fast terminal
 set noerrorbells              " No error bells please
@@ -14,8 +14,8 @@ set exrc                      " Local vimrc
 set secure                    " Prevent certain commands in local vimrc
 
 " Encoding
-set fileformat=unix						" Default
-set fileformats=unix,dos,mac	" Supporting end-of-line
+set fileformat=unix           " Default
+set fileformats=unix,dos,mac  " Supporting end-of-line
 set encoding=utf-8
 set fileencodings=utf-8
 
@@ -23,11 +23,11 @@ set fileencodings=utf-8
 set autoindent
 set smartindent
 set nostartofline             " Don't change cursor position
-set tabstop=2									" A tab looks like 2 columns
-set shiftwidth=2							" 2 columns are indented with << or >> 
+set tabstop=2                 " A tab looks like 2 columns
+set shiftwidth=2              " 2 columns are indented with << or >> 
 set shiftround                " Shift round to nearest indentation
-set smarttab									" Backspace delete appropriate spaces
-set expandtab									" Replace tab with spaces
+set smarttab                  " Backspace delete appropriate spaces
+set expandtab                 " Replace tab with spaces
 set backspace=indent,eol,start
 set clipboard+=unnamed
 
@@ -47,40 +47,29 @@ highlight SpellBad cterm=underline
 
 " Appearance
 set background=dark
-set ruler             			  " Show the line number on the bar
-set number              			" Line numbers
-set cursorline								" Line under cursor
+set ruler                     " Show the line number on the bar
+set number                    " Line numbers
+set cursorline                " Line under cursor
 set scrolloff=5               " Keep at least 10 lines above/below
 set sidescrolloff=10          " Keep at least 10 lines left/right
-set lazyredraw          			" Don't redraw when don't have to
+set lazyredraw                " Don't redraw when don't have to
 set noerrorbells              " Don't make noise
 set linespace=0               " Don't insert any extra pixel betweens rows
 set list                      " Show tabs and spaces so we can remove them
 set listchars=tab:\ \ ,trail:.
-" set whichwrap=b,s,h,l,<,>,~,[,] " everything wraps
-"             | | | | | | | | |
-"             | | | | | | | | +-- "]" Insert and Replace
-"             | | | | | | | +-- "[" Insert and Replace
-"             | | | | | | +-- "~" Normal
-"             | | | | | +-- <Right> Normal and Visual
-"             | | | | +-- <Left> Normal and Visual
-"             | | | +-- "l" Normal and Visual (not recommended)
-"             | | +-- "h" Normal and Visual (not recommended)
-"             | +-- <Space> Normal and Visual
-"             +-- <BS> Normal and Visual
 
 " Backup
-set hidden            			  " Hide buffers when they are abandoned
+set hidden                    " Hide buffers when they are abandoned
 set history=9999              " Big old history
 set timeoutlen=300            " Super low delay
 set undolevels=1000           " 1000 undo
 set updatecount=100           " Switch every 100 chars
-set autoread            			" Watch for file changes
-set noautowrite         			" Don't automatically write on :next
+set autoread                  " Watch for file changes
+set noautowrite               " Don't automatically write on :next
 set backupdir=~/.vim/backup   " Where to put backup files
 set directory=~/.vim/temp     " Where to place swap files in
 set formatoptions+=n          " Recognize numbered lists
-set formatlistpat=^\\s*\\(\\d\\\|[-*]\\)\\+[\\]:.)}\\t\ ]\\s* 
+set formatlistpat=^\\s*\\(\\d\\\|[-*]\\)\\+[\\]:.)}\\t\ ]\\s*
                               " And bullets, too
 set viminfo+=!                " Store upper-case registers in viminfo
 set nomore                    " Short nomore
@@ -90,30 +79,17 @@ set wildmenu                  " Menu has tab completion
 set wildchar=<Tab>
 set wildmode=longest,list,full
 set laststatus=2
-set showcmd 									" Show (partial) command in status line
-set showmode									" Show current mode
-set more              			  " Use more prompt
+set showcmd                   " Show (partial) command in status line
+set showmode                  " Show current mode
+set more                      " Use more prompt
 set cmdheight=2               " Command line two lines high
 set report=0                  " Always report all messages
 set shortmess=aOstT           " To avoid 'press a key' prompt
-" set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%02v]
-"              | | | | |  |   |      |  |     |    |
-"              | | | | |  |   |      |  |     |    + current column
-"              | | | | |  |   |      |  |     +-- current line
-"              | | | | |  |   |      |  +-- current % into file
-"              | | | | |  |   |      +-- current syntax in square brackets
-"              | | | | |  |   +-- current file format
-"              | | | | |  +-- number of lines
-"              | | | | +-- preview flag in square brackets
-"              | | | +-- help flag in square brackets
-"              | | +-- read-only flag in square brackets
-"              | +-- modified flag in square brackets
-"              +-- full path to file in the buffer
 
 " Searching
 set incsearch                 " Incremental search
 set ignorecase                " Search ignoring case
-set smartcase         			  " Do smart case matching
+set smartcase                 " Do smart case matching
 set showmatch                 " Show matching bracket
 set matchtime=5               " How many 1/10 seconds to blink
 set diffopt=filler,iwhite     " Ignore all whitespace and sync
@@ -224,6 +200,9 @@ Plugin 'jceb/vim-orgmode'
 " Color Schemes
 Plugin 'jellybeans.vim'
 Plugin 'altercation/vim-colors-solarized'
+
+" Sudo on *nix
+Plugin 'SudoEdit.vim'
 
 call vundle#end()
 filetype plugin indent on
