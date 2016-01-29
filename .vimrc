@@ -206,13 +206,7 @@ autocmd FileType go nnoremap <leader>g :GoDef<CR>
 
 " Rust
 Plugin 'rust-lang/rust.vim'
-Plugin 'phildawes/racer'
-Plugin 'racer-rust/vim-racer'
-let $RUST_SRC_PATH="/usr/local/src/rust/src"
-let g:racer_cmd = "~/.vim/bundle/racer/target/release/racer"
-autocmd FileType rust set foldmethod=syntax
-autocmd FileType rust let g:ycm_semantic_triggers = { 'rust' : ['::', '.'] }
-autocmd FileType rust nnoremap <leader>g :call RacerGoToDefinition()<cr>
+let g:ycm_rust_src_path = '/usr/local/src/rust/src'
 
 " CMake
 Plugin 'jalcine/cmake.vim'
