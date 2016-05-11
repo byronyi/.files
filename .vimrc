@@ -23,8 +23,8 @@ set fileencodings=utf-8
 set autoindent
 set smartindent
 set nostartofline             " Don't change cursor position
-set tabstop=2                 " A tab looks like 2 columns
-set shiftwidth=2              " 2 columns are indented with << or >> 
+set tabstop=4                 " A tab looks like 2 columns
+set shiftwidth=4              " 2 columns are indented with << or >> 
 set shiftround                " Shift round to nearest indentation
 set smarttab                  " Backspace delete appropriate spaces
 set expandtab                 " Replace tab with spaces
@@ -116,7 +116,6 @@ syntax on
 set complete=.,w,b,u,U,t,i,d  " Scan upon tab completion
 set completeopt=menu,preview
 
-" Vundle and Plug-in
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -170,6 +169,7 @@ Plugin 'tpope/vim-fugitive'
 " C/C++
 Plugin 'a.vim'
 nnoremap <F4> :A<CR>
+set foldmethod=syntax
 
 " Python
 Plugin 'tmhedberg/SimpylFold'
