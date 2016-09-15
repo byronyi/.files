@@ -9,7 +9,6 @@ export BLOCKSIZE=1k
 
 export CLICOLOR=1
 export TERM=xterm-256color
-export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation

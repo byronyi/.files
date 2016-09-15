@@ -204,6 +204,13 @@ Plugin 'altercation/vim-colors-solarized'
 " Sudo on *nix
 Plugin 'SudoEdit.vim'
 
+" HTML
+Plugin 'mattn/emmet-vim'
+
+" JavaScript
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 call vundle#end()
 filetype plugin indent on
 
