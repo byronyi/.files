@@ -23,8 +23,8 @@ set fileencodings=utf-8
 set autoindent
 set smartindent
 set nostartofline             " Don't change cursor position
-set tabstop=4                 " A tab looks like 2 columns
-set shiftwidth=4              " 2 columns are indented with << or >> 
+set tabstop=2                 " A tab looks like 2 columns
+set shiftwidth=2              " 2 columns are indented with << or >> 
 set shiftround                " Shift round to nearest indentation
 set smarttab                  " Backspace delete appropriate spaces
 set expandtab                 " Replace tab with spaces
@@ -134,6 +134,7 @@ nmap <F3> :TagbarToggle<CR>
 
 " Semantic Completer
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
@@ -171,6 +172,11 @@ Plugin 'a.vim'
 nnoremap <F4> :A<CR>
 set foldmethod=syntax
 
+" Java
+Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'udalov/javap-vim'
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 " Python
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tshirtman/vim-cython'
@@ -186,6 +192,9 @@ let g:ycm_rust_src_path = '/usr/local/src/rust/src'
 
 " CMake
 Plugin 'jalcine/cmake.vim'
+
+" Bazel
+Plugin 'google/vim-ft-bzl'
 
 " Tex
 Plugin 'lervag/vimtex'
