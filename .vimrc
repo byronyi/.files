@@ -162,7 +162,7 @@ Plugin 'rking/ag.vim'
 Plugin 'dyng/ctrlsf.vim'
 
 " Syntax Checking
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 " Git inside Vim
 Plugin 'tpope/vim-fugitive'
@@ -172,10 +172,13 @@ Plugin 'a.vim'
 nnoremap <F4> :A<CR>
 set foldmethod=syntax
 
-" Java
-Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'udalov/javap-vim'
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" Java & Scala
+" Plugin 'derekwyatt/vim-scala'
+" Plugin 'ensime/ensime-vim'
+" autocmd BufWritePost *.scala silent :EnTypeCheck
+" nnoremap <leader>t :EnTypeCheck<CR>
+" au FileType java nnoremap <leader>g :EnDeclaration<CR>
+" au FileType scala nnoremap <leader>g :EnDeclaration<CR>
 
 " Python
 Plugin 'tmhedberg/SimpylFold'
@@ -189,9 +192,6 @@ autocmd FileType go nnoremap <leader>g :GoDef<CR>
 " Rust
 Plugin 'rust-lang/rust.vim'
 let g:ycm_rust_src_path = '/usr/local/src/rust/src'
-
-" CMake
-Plugin 'jalcine/cmake.vim'
 
 " Bazel
 Plugin 'google/vim-ft-bzl'
@@ -220,7 +220,25 @@ Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+" Code Format
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer autopep8
+augroup END
+
 call vundle#end()
+call glaive#Install()
+
 filetype plugin indent on
 
 colorscheme solarized
