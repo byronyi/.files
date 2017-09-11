@@ -173,12 +173,12 @@ nnoremap <F4> :A<CR>
 set foldmethod=syntax
 
 " Java & Scala
-" Plugin 'derekwyatt/vim-scala'
-" Plugin 'ensime/ensime-vim'
-" autocmd BufWritePost *.scala silent :EnTypeCheck
-" nnoremap <leader>t :EnTypeCheck<CR>
-" au FileType java nnoremap <leader>g :EnDeclaration<CR>
-" au FileType scala nnoremap <leader>g :EnDeclaration<CR>
+Plugin 'derekwyatt/vim-scala'
+Plugin 'ensime/ensime-vim'
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <leader>t :EnTypeCheck<CR>
+au FileType java nnoremap <leader>g :EnDeclaration<CR>
+au FileType scala nnoremap <leader>g :EnDeclaration<CR>
 
 " Python
 Plugin 'tmhedberg/SimpylFold'
