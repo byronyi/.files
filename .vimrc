@@ -220,6 +220,12 @@ Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+" P4
+Plugin 'TakeshiTseng/vim-language-p4'
+
+" Verilog
+Plugin 'vhda/verilog_systemverilog.vim'
+
 " Code Format
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
