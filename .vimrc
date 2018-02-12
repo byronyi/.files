@@ -136,14 +136,24 @@ nmap <F3> :TagbarToggle<CR>
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 nnoremap <leader>g :YcmCompleter GoTo<CR>
+set completeopt=menu,menuone
+let g:ycm_semantic_triggers =  {
+      \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+      \ 'cs,lua,javascript': ['re!\w{2}'],
+\ }
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_show_diagnostics_ui = 0
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
+let g:ycm_server_log_level = 'info'
+let g:ycm_key_invoke_completion = '<c-z>'
+noremap <c-z> <NOP>
 
 " Project Navigation
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -175,6 +185,7 @@ set foldmethod=syntax
 " Java & Scala
 Plugin 'derekwyatt/vim-scala'
 Plugin 'ensime/ensime-vim'
+Plugin 'NLKNguyen/vim-maven-syntax'
 autocmd BufWritePost *.scala silent :EnTypeCheck
 nnoremap <leader>t :EnTypeCheck<CR>
 au FileType java nnoremap <leader>g :EnDeclaration<CR>
