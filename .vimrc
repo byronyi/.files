@@ -168,8 +168,13 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
 " Searching
-Plugin 'rking/ag.vim'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'mileszs/ack.vim'
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
 
 " Syntax Checking
 Plugin 'vim-syntastic/syntastic'
@@ -181,15 +186,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'a.vim'
 nnoremap <F4> :A<CR>
 set foldmethod=syntax
-
-" Java & Scala
-Plugin 'derekwyatt/vim-scala'
-Plugin 'ensime/ensime-vim'
-Plugin 'NLKNguyen/vim-maven-syntax'
-autocmd BufWritePost *.scala silent :EnTypeCheck
-nnoremap <leader>t :EnTypeCheck<CR>
-au FileType java nnoremap <leader>g :EnDeclaration<CR>
-au FileType scala nnoremap <leader>g :EnDeclaration<CR>
 
 " Python
 Plugin 'tmhedberg/SimpylFold'
@@ -207,6 +203,9 @@ let g:ycm_rust_src_path = '/usr/local/src/rust/src'
 " Bazel
 Plugin 'google/vim-ft-bzl'
 
+" Maven
+Plugin 'NLKNguyen/vim-maven-syntax'
+
 " Tex
 Plugin 'lervag/vimtex'
 
@@ -218,8 +217,7 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'jceb/vim-orgmode'
 
 " Color Schemes
-Plugin 'jellybeans.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'google/vim-colorscheme-primary'
 
 " Sudo on *nix
 Plugin 'SudoEdit.vim'
@@ -239,8 +237,13 @@ Plugin 'vhda/verilog_systemverilog.vim'
 
 " Code Format
 Plugin 'google/vim-maktaba'
+Plugin 'google/vim-selector'
 Plugin 'google/vim-codefmt'
+Plugin 'google/vim-codereview'
+Plugin 'google/vim-jsonnet'
+Plugin 'google/vim-searchindex'
 Plugin 'google/vim-glaive'
+Plugin 'google/vim-syncopate'
 
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
@@ -256,11 +259,10 @@ augroup END
 call vundle#end()
 call glaive#Install()
 
+Glaive syncopate plugin[mappings]
+
 filetype plugin indent on
 
-colorscheme solarized
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+set t_Co=256
+set background=dark
+colorscheme primary
