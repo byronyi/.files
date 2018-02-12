@@ -121,7 +121,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 " Vundle
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Directory Navigation
 Plugin 'scrooloose/nerdtree'
