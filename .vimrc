@@ -141,6 +141,7 @@ let g:ycm_semantic_triggers =  {
       \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
       \ 'cs,lua,javascript': ['re!\w{2}'],
 \ }
+let g:ycm_python_binary_path = 'python'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_confirm_extra_conf = 0
@@ -188,6 +189,7 @@ nnoremap <F4> :A<CR>
 set foldmethod=syntax
 
 " Python
+Plugin 'plytophogy/vim-virtualenv'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tshirtman/vim-cython'
 let g:SimpylFold_docstring_preview = 1
@@ -224,10 +226,18 @@ Plugin 'SudoEdit.vim'
 
 " HTML
 Plugin 'mattn/emmet-vim'
+let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" CSS
+Plugin 'ap/vim-css-color'
 
 " JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 " P4
 Plugin 'TakeshiTseng/vim-language-p4'
