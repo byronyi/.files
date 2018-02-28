@@ -232,6 +232,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+autocmd FileType typescript nnoremap <leader>g :YcmCompleter GoToDefinition<CR>
 
 " P4
 Plugin 'TakeshiTseng/vim-language-p4'
