@@ -66,8 +66,6 @@ set undolevels=1000           " 1000 undo
 set updatecount=100           " Switch every 100 chars
 set autoread                  " Watch for file changes
 set noautowrite               " Don't automatically write on :next
-set backupdir=~/.vim/backup   " Where to put backup files
-set directory=~/.vim/temp     " Where to place swap files in
 set formatoptions+=n          " Recognize numbered lists
 set formatlistpat=^\\s*\\(\\d\\\|[-*]\\)\\+[\\]:.)}\\t\ ]\\s*
                               " And bullets, too
@@ -137,10 +135,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 set completeopt=menu,menuone
-let g:ycm_semantic_triggers =  {
-      \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-      \ 'cs,lua,javascript': ['re!\w{2}'],
-\ }
 let g:ycm_python_binary_path = 'python'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_add_preview_to_completeopt = 0
@@ -257,12 +251,11 @@ Plugin 'google/vim-syncopate'
 
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType c,cpp,proto,java,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 
