@@ -1,0 +1,5 @@
+[user]
+	name = Bairen Yi
+	email = byi@connect.ust.hk
+[core]
+	excludesfile = ~/.gitignore
