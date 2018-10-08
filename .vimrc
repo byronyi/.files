@@ -121,6 +121,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+" Gist
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+
 " Directory Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
