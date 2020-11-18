@@ -206,9 +206,6 @@ Plugin 'google/vim-ft-bzl'
 " Maven
 Plugin 'NLKNguyen/vim-maven-syntax'
 
-" Tex
-Plugin 'lervag/vimtex'
-
 " Pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
