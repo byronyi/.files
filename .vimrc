@@ -139,7 +139,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 set completeopt=menu,menuone
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python3'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_confirm_extra_conf = 0
@@ -234,12 +234,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 autocmd FileType typescript nnoremap <leader>g :YcmCompleter GoToDefinition<CR>
-
-" P4
-Plugin 'TakeshiTseng/vim-language-p4'
-
-" Verilog
-Plugin 'vhda/verilog_systemverilog.vim'
 
 " Code Format
 Plugin 'google/vim-maktaba'
