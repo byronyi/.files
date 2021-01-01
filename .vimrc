@@ -213,9 +213,6 @@ Plugin 'vim-pandoc/vim-pandoc'
 " Org Mode
 Plugin 'jceb/vim-orgmode'
 
-" Color Schemes
-Plugin 'google/vim-colorscheme-primary'
-
 " Sudo on *nix
 Plugin 'SudoEdit.vim'
 
@@ -261,7 +258,3 @@ call glaive#Install()
 Glaive syncopate plugin[mappings]
 
 filetype plugin indent on
-
-set t_Co=256
-set background=dark
-colorscheme primary
